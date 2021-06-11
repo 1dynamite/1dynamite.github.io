@@ -1,0 +1,25 @@
+body {
+    margin: 0px;
+  }
+
+.tile {
+    position: absolute; 
+    background-color: lightgray; 
+    border: 1px solid; 
+    width: 320px;
+    top: 0.4em;
+    bottom: 0.4em;
+    text-align: center;
+    line-height: 180px;
+    transition: transform 0;
+  }
+
+  
+
+  .carousel {
+    position: relative;  
+    height: 40%; 
+    width: 100%;
+    border: 1px solid;
+    
+  }

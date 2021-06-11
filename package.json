@@ -1,0 +1,33 @@
+{
+  "name": "enclassroom",
+  "version": "1.0.0",
+  "description": "This is a kind of e-class",
+  "main": "components.html",
+  "scripts": {
+    "dev": "lite-server",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run scss",
+    "scss": "sass --watch scss:css"
+  },
+  "keywords": [
+    "english",
+    "classroom"
+  ],
+  "author": "Shokhrukh",
+  "license": "ISC",
+  "dependencies": {
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.0",
+    "bootstrap-social": "^5.1.1",
+    "esm": "^3.2.25",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.6.0",
+    "linked-list": "^3.0.1"
+  },
+  "devDependencies": {
+    "lite-server": "^2.6.1",
+    "onchange": "^3.3.0",
+    "parallelshell": "^3.0.2",
+    "sass": "^1.32.12"
+  }
+}
