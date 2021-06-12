@@ -1,6 +1,6 @@
 import {List, createDiv} from './utility.js';
 
-export function carouselModule(margin, translateTime) {
+export function carouselModule(margin, translateTime, slides) {
   let carouselContainer = document.getElementsByClassName("carousel")[0];
   let carouselItems = document.getElementsByClassName("carousel-item");
   let length = carouselItems.length;
@@ -30,7 +30,7 @@ let list = new List(tiles);
 let firstNode = list.tail;
 let carouselWidth = document.getElementsByClassName("carousel")[0].clientWidth;
 let tileWidth = document.getElementsByClassName("tile")[0].clientWidth;
-let leftPad = (carouselWidth - length * (tileWidth + margin))/2;
+let leftPad = (carouselWidth - slides * (tileWidth + margin))/2;
 let arr = [];
 for(let i = 0; i != n; i++) {
     arr.push(leftPad + i * (tileWidth + margin) - (tileWidth + margin));
@@ -46,7 +46,7 @@ newarr.push(arr[1]);
 firstNode.prev.value.style.opacity = "0";
 firstNode.prev.prev.value.style.opacity = "0"; */
 let tempref = firstNode.next;
-for(let i = 0; i != length; i++) {
+for(let i = 0; i != n-slides; i++) {
   tempref.prev.value.style.opacity = "0";
   tempref = tempref.prev;
 }
@@ -67,7 +67,7 @@ function translateOnClick_left(){
     document.styleSheets[1].cssRules[1].style.transition = "transform " + translateTime + 
       "s, opacity " + 0.5 + "s";
     firstNode.prev.value.style.opacity = "1";
-    firstNode.get(length - 1).value.style.opacity = "0";
+    firstNode.get(slides - 1).value.style.opacity = "0";
     translate(newarr);
     firstNode = firstNode.prev;
     setTimeout(addHandler, translateTime * 1000);
@@ -77,7 +77,7 @@ function translateOnClick_right(){
   document.styleSheets[1].cssRules[1].style.transition = "transform " + translateTime + 
     "s, opacity " + 0.5 + "s";
   firstNode.value.style.opacity = "0";
-  firstNode.get(length).value.style.opacity = "1";
+  firstNode.get(slides).value.style.opacity = "1";
   translate(arr);
   firstNode = firstNode.next;
   setTimeout(addHandler, translateTime * 1000);
