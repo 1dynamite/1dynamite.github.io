@@ -11,10 +11,7 @@ body {
   bottom: 0.4em;
   text-align: center;
   line-height: 180px;
-  transition: transform 0;
 }
-
-
 
 .carousel {
   position: relative;  
@@ -25,4 +22,19 @@ body {
 }
 .carousel-item {
   height: 100%;
+}
+%controls {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  font-size: 20px;
+  width: 50px;
+}
+.controls-left {
+  @extend %controls;
+  left: 50px;
+}
+.controls-right {
+  @extend %controls;
+  right: 50px;
 }

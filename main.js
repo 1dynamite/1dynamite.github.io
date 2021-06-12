@@ -1,3 +1,5 @@
 import { carouselModule } from "./modules/carousel.js";
 
-carouselModule(8, 0.7);
+let m = document.getElementsByClassName("carousel")[0].getAttribute("m-rl");
+let cycle = document.getElementsByClassName("carousel")[0].getAttribute("cycle");
+carouselModule(+m, +cycle);

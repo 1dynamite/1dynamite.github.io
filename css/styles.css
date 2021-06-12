@@ -11,7 +11,6 @@ body {
   bottom: 0.4em;
   text-align: center;
   line-height: 180px;
-  transition: transform 0;
 }
 
 .carousel {
@@ -23,6 +22,22 @@ body {
 
 .carousel-item {
   height: 100%;
+}
+
+.controls-right, .controls-left {
+  position: absolute;
+  z-index: 1;
+  top: 50%;
+  font-size: 20px;
+  width: 50px;
+}
+
+.controls-left {
+  left: 50px;
+}
+
+.controls-right {
+  right: 50px;
 }
 
 /*# sourceMappingURL=styles.css.map */

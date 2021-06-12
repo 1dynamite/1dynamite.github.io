@@ -10,6 +10,14 @@ function getTranslateX(element){
         this.prev = null;
         this.next = null;
     }
+    get(jumps){
+        let item = this;
+        while(jumps != 0){
+            item = item.next;
+            jumps--;
+        }
+        return item;
+    }
   }
   class List {
     constructor(array) {
