@@ -1,6 +1,7 @@
-import {List, createDiv} from './modules/utility.js';
+import {List, createDiv} from './utility.js';
 
-let carouselContainer = document.getElementsByClassName("carousel")[0];
+export function carouselModule(margin, translateTime) {
+  let carouselContainer = document.getElementsByClassName("carousel")[0];
 let n = 3 + 1;
 let tiles = createDiv(n);
 for(let i of tiles) {
@@ -13,7 +14,6 @@ let list = new List(tiles);
 let firstNode = list.head;
 let carouselWidth = document.getElementsByClassName("carousel")[0].offsetWidth;
 let tileWidth = document.getElementsByClassName("tile")[0].clientWidth;
-let margin = 8;
 let leftPad = (carouselWidth - 3 * (tileWidth + margin))/2;
 let arr = [];
 for(let i = 0; i != n; i++) {
@@ -34,9 +34,9 @@ translate();
 addHandler();
 function translateOnClick(){
     removeHandler();
-    document.styleSheets[0].cssRules[1].style.transition = "transform " + 0.7 + "s";
+    document.styleSheets[0].cssRules[1].style.transition = "transform " + translateTime + "s";
     translate();
-    setTimeout(addHandler, 1000);
+    setTimeout(addHandler, translateTime * 1000);
 } 
 
 function removeHandler() {
@@ -47,3 +47,5 @@ function addHandler() {
   }
 /* 
 document.getElementById("demo").innerHTML = newList.head.prev.value; */
+}
+
