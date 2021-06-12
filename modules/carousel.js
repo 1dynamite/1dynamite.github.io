@@ -2,12 +2,27 @@ import {List, createDiv} from './utility.js';
 
 export function carouselModule(margin, translateTime) {
   let carouselContainer = document.getElementsByClassName("carousel")[0];
-let n = 3 + 1;
+  let carouselItems = document.getElementsByClassName("carousel-item");
+  let length = carouselItems.length;
+let n = length + 1;
 let tiles = createDiv(n);
+
+
+for(let i = 0; i != length; i++) {
+  tiles[i].appendChild(carouselItems[0]);
+}
+if(length != 0)
+  { 
+    let cln = tiles[0].firstChild.cloneNode("true");
+    tiles[length].appendChild(cln);
+  }
+
+
 for(let i of tiles) {
     i.className = "tile";
     carouselContainer.appendChild(i);
 }
+
 
 
 let list = new List(tiles);

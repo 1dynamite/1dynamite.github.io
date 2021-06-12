@@ -56,8 +56,8 @@ function getTranslateX(element){
     let newContent = null;
     for(let i = 0; howMany != i; i++) {
         newDiv = document.createElement("div");
-        newContent = document.createTextNode("" + (i +1));
-        newDiv.appendChild(newContent);
+        /* newContent = document.createTextNode("" + (i +1));
+        newDiv.appendChild(newContent); */
         array.push(newDiv);
     }
     return array;

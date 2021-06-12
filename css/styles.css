@@ -21,4 +21,8 @@ body {
   border: 1px solid;
 }
 
+.carousel-item {
+  height: 100%;
+}
+
 /*# sourceMappingURL=styles.css.map */
