@@ -42,9 +42,6 @@ for(let i = 2; i != arr.length; i++){
 newarr.push(arr[0]);
 newarr.push(arr[1]);
 
-/* firstNode.value.style.opacity = "0";
-firstNode.prev.value.style.opacity = "0";
-firstNode.prev.prev.value.style.opacity = "0"; */
 let tempref = firstNode.next;
 for(let i = 0; i != n-slides; i++) {
   tempref.prev.value.style.opacity = "0";
@@ -64,8 +61,8 @@ firstNode = firstNode.next;
 addHandler();
 function translateOnClick_left(){
     removeHandler();
-    document.styleSheets[1].cssRules[1].style.transition = "transform " + translateTime + 
-      "s, opacity " + 0.5 + "s";
+    /* document.styleSheets[1].cssRules[1].style.transition = "transform " + translateTime + 
+      "s, opacity " + 0.5 + "s"; */
     firstNode.prev.value.style.opacity = "1";
     firstNode.get(slides - 1).value.style.opacity = "0";
     translate(newarr);
@@ -74,8 +71,8 @@ function translateOnClick_left(){
 }
 function translateOnClick_right(){
   removeHandler();
-  document.styleSheets[1].cssRules[1].style.transition = "transform " + translateTime + 
-    "s, opacity " + 0.5 + "s";
+  /* document.styleSheets[1].cssRules[1].style.transition = "transform " + translateTime + 
+    "s, opacity " + 0.5 + "s"; */
   firstNode.value.style.opacity = "0";
   firstNode.get(slides).value.style.opacity = "1";
   translate(arr);
@@ -92,6 +89,11 @@ function addHandler() {
     document.getElementsByClassName("controls-right")[0].addEventListener("click", translateOnClick_right);
   }
 
-//document.getElementById("demo").innerHTML = document.styleSheets[1].cssRules.length;
+  let str = document.styleSheets[1].cssRules[1].style.transition;
+  str += ", transform " + translateTime + "s, opacity " + 0.5 + "s";
+window.onload = () => document.styleSheets[1].cssRules[1].style.transition = str;
+
+
+//document.getElementById("demo").innerHTML = str;
 }
 

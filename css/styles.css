@@ -4,20 +4,32 @@ body {
 
 .tile {
   position: absolute;
-  background-color: lightgray;
-  border: 1px solid;
+  border-top: 4px solid #ffa9d1;
   width: 320px;
   top: 0.4em;
   bottom: 0.4em;
   text-align: center;
-  line-height: 180px;
+  line-height: 280px;
+  vertical-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  transition: box-shadow 0.3s, width 0.3s, top 0.3s, bottom 0.3s, left 0.3s;
+  cursor: pointer;
+  left: 0;
+}
+
+.tile:hover {
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+  width: 290px;
+  top: 0.8em;
+  bottom: 0.8em;
+  left: 15px;
 }
 
 .carousel {
   position: relative;
-  height: 40%;
+  height: 60%;
   width: 100%;
-  border: 1px solid;
 }
 
 .carousel-item {
@@ -27,17 +39,28 @@ body {
 .controls-right, .controls-left {
   position: absolute;
   z-index: 1;
-  top: 50%;
-  font-size: 20px;
-  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  width: 100px;
+  color: rgba(0, 0, 0, 0.22);
+  height: 100%;
+  transition: font-size 0.1s;
 }
 
 .controls-left {
-  left: 50px;
+  left: 54px;
 }
 
 .controls-right {
-  right: 50px;
+  right: 70px;
+}
+
+.controls-left:hover, .controls-right:hover {
+  font-size: 70px;
+  text-shadow: 1px 1px 8px #cfcdcd;
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=styles.css.map */
