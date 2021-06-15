@@ -1,7 +1,8 @@
-body {
+
+html, body {
+  height: 100%;
   margin: 0px;
 }
-
 .tile {
   position: absolute; 
   border-top: 4px solid rgb(255, 169, 209);
@@ -11,14 +12,14 @@ body {
   text-align: center;
   line-height: 280px;
   vertical-align: center;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2) ;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3) ;
   border-radius: 10px;
   transition: box-shadow 0.3s, width 0.3s, top 0.3s, bottom 0.3s, left 0.3s;
   cursor: pointer;
   left: 0;
 }
 .tile:hover {
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4) ;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5) ;
   width: 290px;
   top: 0.8em;
   bottom: 0.8em;
@@ -27,7 +28,7 @@ body {
 
 .carousel {
   position: relative;  
-  height: 60%; 
+  height: 50%; 
   width: 100%;
   
 }
@@ -58,4 +59,50 @@ body {
   font-size: 70px;
   text-shadow: 1px 1px 8px  rgb(207, 205, 205);
   cursor: pointer;
+}
+.zoomed-in {
+  height: 100%;
+  width: 100%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  left:0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.cloned-data-items {
+  position: absolute;
+  max-width: 100%;
+  max-height: 100%;
+  width: max-content;
+  display: none;
+}
+.temp {
+  height: 100px;
+  width: 100px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+%zoomed-in-controls {
+  position: absolute;
+  top: 45%;
+  font-size: 45px;
+}
+.z-control-right {
+  @extend %zoomed-in-controls;
+  right: 50px;
+}
+.z-control-left {
+  @extend %zoomed-in-controls;
+  left: 50px;
+}
+.exit-icon{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 45px;
 }

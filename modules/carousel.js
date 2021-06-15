@@ -1,12 +1,12 @@
 import {List, createDiv} from './utility.js';
 
-export function carouselModule(margin, translateTime, slides) {
-  let carouselContainer = document.getElementsByClassName("carousel")[0];
+export function carouselModule(margin, translateTime, slides, crslNum) {
+  let carouselContainer = document.getElementsByClassName("carousel")[crslNum];
   let carouselItems = document.getElementsByClassName("carousel-item");
   let length = carouselItems.length;
-let n = 2 * length ;
-let tiles = createDiv(n);
+  let n = 2 * length ;
 
+let tiles = createDiv(n);
 
 for(let i = 0; i != length; i++) {
   tiles[i].appendChild(carouselItems[0]);
@@ -23,18 +23,82 @@ for(let i of tiles) {
     i.className = "tile";
     carouselContainer.appendChild(i);
 }
+/* ---------------------------------------------------------------------------------- */
+
+let temp = document.createElement("div");
+temp.className = "zoomed-in";
+document.body.appendChild(temp);
+let clonedDataItems = createDiv(n);
+for(let i = 0; i != n; i++) {
+  let cln = tiles[i].firstChild.cloneNode("true");
+  clonedDataItems[i].appendChild(cln);
+}
+for(let i of clonedDataItems) {
+  i.className = "cloned-data-items";
+  i.firstChild.className = "temp"; /* ???????????????????????????????????????????????????? */
+  temp.appendChild(i);
+}
+let arrowRight = document.createElement("i");
+let arrowLeft = document.createElement("i");
+let exitIcon = document.createElement("span");
+exitIcon.innerHTML = "&times";
+exitIcon.className = "exit-icon";
+arrowRight.className = "fa fa-angle-right z-control-right";
+arrowLeft.className = "fa fa-angle-left z-control-left";
+temp.appendChild(arrowRight);
+temp.appendChild(arrowLeft);
+temp.appendChild(exitIcon);
 
 
+let clonedItemsList = new List(clonedDataItems);
+let currentItem = clonedItemsList.head;
+
+document.getElementsByClassName("z-control-right")[0].addEventListener("click", displayNextImage);
+document.getElementsByClassName("z-control-left")[0].addEventListener("click", displayPrevImage);
+
+function displayNextImage() {
+  currentItem.value.style.display = "none";
+  currentItem.next.value.style.display = "block";
+  currentItem = currentItem.next;
+}
+function displayPrevImage() {
+  currentItem.value.style.display = "none";
+  currentItem.prev.value.style.display = "block";
+  currentItem = currentItem.prev;
+}
+let tilesVSzoomedIn = new Map();
+for(let i = 0; i != n; i++) {
+  tilesVSzoomedIn.set(tiles[i], currentItem);
+  currentItem = currentItem.next;
+}
+
+
+carouselContainer.addEventListener("click", function(e) {
+  if(e.target.parentElement.className == "tile"){
+
+    temp.style.display = "flex";
+    currentItem = tilesVSzoomedIn.get(e.target.parentElement);
+    currentItem.value.style.display = "block";
+  }
+});
+exitIcon.addEventListener("click", () => temp.style.display = "none");
+
+
+
+/* ---------------------------------------------------------------------------------- */
 
 let list = new List(tiles);
 let firstNode = list.tail;
-let carouselWidth = document.getElementsByClassName("carousel")[0].clientWidth;
-let tileWidth = document.getElementsByClassName("tile")[0].clientWidth;
-let leftPad = (carouselWidth - slides * (tileWidth + margin))/2;
-let arr = [];
-for(let i = 0; i != n; i++) {
+function calculatePositions(num) {
+  let carouselWidth = document.getElementsByClassName("carousel")[0].clientWidth;
+  let tileWidth = document.getElementsByClassName("tile")[0].clientWidth;
+  let leftPad = (carouselWidth - num * (tileWidth + margin))/2;
+  let arr = [];
+  for(let i = 0; i != n; i++)
     arr.push(leftPad + i * (tileWidth + margin) - (tileWidth + margin));
+  return arr;
 }
+let arr = calculatePositions(slides);
 let newarr = [];
 for(let i = 2; i != arr.length; i++){
   newarr.push(arr[i]);
