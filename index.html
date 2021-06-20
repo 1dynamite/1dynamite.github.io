@@ -6,32 +6,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="font-awesome/css/all.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/stylesContent.css">
     <title>Learn English</title>
 </head>
 
 <body> 
-    
-    <div style="display:flex; align-content: center; flex-wrap: wrap; height: 100%; overflow: hidden;">
-        <div itemsPerSlide="3" m-rl="24" cycle="0.7"  class="carousel">
-            <div class="carousel-item">1</div>
-            <div class="carousel-item">2</div>
-            <div class="carousel-item">3</div>
-            <div class="carousel-item">4</div>
-            
-            <i class="fa fa-caret-right controls-right"></i>
-            <i class="fa fa-caret-left controls-left"></i>
 
+    <div class="contentLayout">
+        <div class="header">
+            <h1 class="header-text">
+                Globalization
+            </h1>
         </div>
+        <div class="contentPlusMenu">
+            <div class="menu">
+                <div class="sticky">
+                    <p class="brow-head">IN THIS LESSON</p>
+                    <ul class="inPageBrowsing">
+                        <li class="selectedItem"><a href="#"><i class="fas fa-chalkboard-teacher brow"></i>Introduction</a></li>
+                        <li><a href="/vocab.html"><i class="fas fa-book brow"></i>Vocabulary</a></li>
+                        <li><a href="/listening.html"><i class="fas fa-headphones brow"></i>Listening</a></li>
+                        <li><a href="/reading.html"><i class="fab fa-readme brow"></i>Reading</a></li>
+                
+                    </ul>
+                </div>
+            </div>
+            <div class="minusHeader">
+                <div class="carouselContainer">
+                    <div itemsPerSlide="3" m-rl="24" cycle="0.7"  class="carousel">
+                        <div class="carousel-item"><img src="/img/ethnic groups.jpg" alt="ethnic groups" class="image1">
+                            <h3>New York</h3>
+                            <p>Home to many ethnic groups</p>
+                        </div>
+                        <div class="carousel-item"><img src="/img/international cuisine.jpg" alt="cuisine" class="image2">
+                            <h3>Sushi</h3>
+                            <p>A well-known dish of international cuisine</p></div>
+                        <div class="carousel-item"><img src="/img/Apple store in Milan.jpg" alt="Apple store in Milan" class="image3">
+                            <h3>Apple store in Milan</h3>
+                            <p>A multinational company Apple has many stores overseas</p></div>
+                        <div class="carousel-item"><img src="/img/labour.jpg" alt="labour" class="image4">
+                            <h3>Factory women</h3>
+                            <p>Labor in China</p></div>
+                        
+                        <div class="controls-right">
+                            <div id="rightControl" class="circleDiv"><i class="fa fa-caret-right caret"></i></div>
+                        </div>
+                        <div class="controls-left">
+                            <div id="leftControl" class="circleDiv"><i class="fa fa-caret-left caret"></i></div>
+                        </div>
+            
+                    </div>
+                </div>
+                <i class="fa fa-tasks"></i><p class="taskStatements">Discuss the questions below:</p>
+                <ul class="thinkVocab">
+                    <li>Look at your clothes, the items on your desk, in your bag and pockets. Where were they made? How many were made in your country?</li>
+                    <li>Does it matter that we now import so many goods from other countries? Why? / Why not?</li>
+                    <li>What effects has globalization had on your country?</li>
+                </ul>
+            </div>
+        </div>
+        
+        
     </div>
 
-    <p id="demo"></p>
-    <p id="demo2"></p>
 
-   <!--  <div class="zoomed-in">
-        <div class="cloned-data-items">123456789</div>
-    </div> -->
+   <p id="demo"></p>
 
     <script type="module" src="main.js"></script>
     

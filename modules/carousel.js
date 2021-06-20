@@ -30,14 +30,15 @@ temp.className = "zoomed-in";
 document.body.appendChild(temp);
 let clonedDataItems = createDiv(n);
 for(let i = 0; i != n; i++) {
-  let cln = tiles[i].firstChild.cloneNode("true");
+  let cln = tiles[i].firstElementChild.cloneNode("true");
   clonedDataItems[i].appendChild(cln);
 }
 for(let i of clonedDataItems) {
   i.className = "cloned-data-items";
-  i.firstChild.className = "temp"; /* ???????????????????????????????????????????????????? */
+  i.firstElementChild.firstElementChild.className = "temp";
   temp.appendChild(i);
 }
+
 let arrowRight = document.createElement("i");
 let arrowLeft = document.createElement("i");
 let exitIcon = document.createElement("span");
@@ -74,16 +75,29 @@ for(let i = 0; i != n; i++) {
 
 
 carouselContainer.addEventListener("click", function(e) {
-  if(e.target.parentElement.className == "tile"){
+  if(e.target.parentElement.className == "carousel-item" || e.target.parentElement.className == "tile"){
 
     temp.style.display = "flex";
-    currentItem = tilesVSzoomedIn.get(e.target.parentElement);
+    let tmp = e.target.parentElement.className == "tile" ? e.target.parentElement : e.target.parentElement.parentElement;
+    
+    currentItem = tilesVSzoomedIn.get(tmp);
     currentItem.value.style.display = "block";
   }
 });
-exitIcon.addEventListener("click", () => temp.style.display = "none");
+exitIcon.addEventListener("click", () => {temp.style.display = "none"; currentItem.value.style.display = "none"});
 
-
+document.getElementsByClassName("controls-right")[0].addEventListener("mouseover", function (){
+  document.getElementById("rightControl").style.boxShadow = "0rem 0.4rem 1.2rem rgb(105, 105, 105)"
+});
+document.getElementsByClassName("controls-right")[0].addEventListener("mouseout", function (){
+  document.getElementById("rightControl").style.boxShadow = "0 0.2rem 0.7rem rgb(131, 130, 130)"
+});
+document.getElementsByClassName("controls-left")[0].addEventListener("mouseover", function (){
+  document.getElementById("leftControl").style.boxShadow = "0rem 0.4rem 1.2rem rgb(105, 105, 105)"
+});
+document.getElementsByClassName("controls-left")[0].addEventListener("mouseout", function (){
+  document.getElementById("leftControl").style.boxShadow = "0 0.2rem 0.7rem rgb(131, 130, 130)"
+});
 
 /* ---------------------------------------------------------------------------------- */
 

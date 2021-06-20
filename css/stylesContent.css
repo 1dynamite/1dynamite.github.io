@@ -1,0 +1,268 @@
+body {
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.gfillText {
+  display: flex;
+  flex-direction: column;
+  margin-top: 2.5rem;
+}
+
+.contentLayout {
+  font-size: 0.9em;
+  margin-bottom: 2rem;
+}
+
+.contentPlusMenu {
+  display: flex;
+}
+
+.sticky {
+  position: sticky;
+  top: 0.5rem;
+  will-change: transform;
+}
+
+.menu {
+  flex: 1 0 0;
+  box-shadow: 0.3rem 0 0.5rem #d6d6d6;
+}
+
+.inPageBrowsing {
+  list-style-type: none;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 1rem;
+  color: #27253d;
+  padding-left: 1.4rem;
+}
+
+.inPageBrowsing li {
+  margin: 0.8rem 0 0.8rem 0;
+  line-height: 1.8rem;
+}
+
+.selectedItem {
+  /* border-left: 0.3rem solid rgb(255, 230, 5); */
+  border-left: 0.3rem solid #4805ff;
+  padding-left: 1rem;
+  background-color: whitesmoke;
+}
+
+.inPageBrowsing a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.brow {
+  margin-right: 0.5rem;
+  color: #3939bd;
+}
+
+.minusHeaderVocab, .minusHeader {
+  overflow-x: hidden;
+  padding: 1rem 5rem 1rem 5rem;
+  flex: 4 0 0;
+}
+
+.minusHeaderVocab {
+  overflow-x: visible;
+}
+
+.writing, .reading, .listening {
+  min-height: 100px;
+  background-color: white;
+  margin: 2px;
+  display: flex;
+}
+
+.header {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.header-text {
+  background-color: #00005e;
+  color: #f0f0f0;
+  align-self: center;
+  padding: 0.3em 1em;
+  border-radius: 0.2em 0 0 0.2em;
+  margin: 2rem 0 2rem 0;
+}
+
+.carouselContainer {
+  margin: 2rem -5rem 5rem -5rem;
+  height: 60vh;
+}
+
+.vocabulary {
+  display: flex;
+  flex-direction: column;
+}
+
+.vocabulary-items {
+  display: flex;
+  flex-wrap: wrap;
+  align-self: center;
+  justify-content: center;
+  width: 48vw;
+  /*  background-color: rgb(197, 197, 253);
+   box-shadow: 0 0 1em rgb(165, 165, 248); */
+  box-shadow: 0 0.3em 0.6em #a1a1a1;
+  border-radius: 0.4em;
+  position: relative;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: 0.1s;
+  font-family: "Monaco", monospace;
+  margin-bottom: 2.5rem;
+  color: #231e50;
+  font-weight: normal;
+}
+
+.vocabulary-items:hover {
+  box-shadow: 0 0.5em 1em #a1a1a1;
+}
+
+.vocabulary-items span {
+  margin: 0.65rem;
+}
+
+.word-definitions {
+  min-width: 60vw;
+  background-color: white;
+  position: absolute;
+  top: 100%;
+  padding: 0px;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 0 1em white;
+  font-size: 0.9em;
+  cursor: auto;
+  border-radius: 0.2em;
+  box-shadow: 0 0 0.6em #8d8c8c;
+  font-weight: normal;
+}
+
+.word-definitions dt {
+  font-size: larger;
+  margin: 0.5em 0 0.1em 0;
+}
+
+.thinkVocab {
+  font-family: Verdana, Tahoma, sans-serif;
+  align-self: flex-start;
+  border-left: 5px solid red;
+  background-color: #f1f1f1;
+  list-style-type: none;
+  padding: 0.6rem 1.2rem;
+  margin-left: 2rem;
+  border-radius: 0 0.4rem 0.4rem 0;
+}
+
+.thinkVocab li {
+  padding-left: 0.5rem;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+.listening {
+  justify-content: center;
+  flex-direction: column;
+}
+
+.listening video {
+  border-radius: 0.2em;
+  align-self: center;
+}
+
+.thBreak {
+  width: 30%;
+  border-top: 1px solid #b1a4b1;
+  align-self: center;
+  margin: 2em 0 2em 0;
+}
+
+.reading {
+  flex-direction: column;
+}
+
+.main-text {
+  font-family: Verdana, Tahoma, sans-serif;
+  width: 90%;
+  border: 2px solid #d9d9fa;
+  padding: 1rem;
+  background-color: #fafafa;
+  border-radius: 0.7em;
+  align-self: center;
+  margin-bottom: 2rem;
+}
+
+.main-text h3 {
+  text-align: center;
+}
+
+.gapFillpar {
+  font-family: Verdana, Tahoma, sans-serif;
+  padding: 0.7em;
+  line-height: 1.7em;
+  border-radius: 0.7em;
+  width: 90%;
+  align-self: center;
+  background-color: #f1f1f1;
+}
+
+.gapFill input {
+  border: none;
+  font-family: Verdana, Tahoma, sans-serif;
+  font-size: inherit;
+  text-align: center;
+  outline: none;
+  margin: 0 0.5em 0 0.5em;
+  width: 8rem;
+  border-radius: 0.2rem;
+}
+
+.gapFill input:focus {
+  outline: 1px solid #554242;
+}
+
+.taskStatements {
+  font-size: 1.2em;
+  color: inherit;
+  margin: 1rem 0 1rem 0;
+  font-family: Verdana, Tahoma, sans-serif;
+  border-bottom: 0.2rem solid #ffe605;
+  width: max-content;
+  display: inline-block;
+}
+
+.fa-tasks {
+  margin-right: 0.7rem;
+  color: #88754d;
+}
+
+.readingHs {
+  text-align: center;
+}
+
+.readingHs-sub {
+  text-align: center;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.brow-head {
+  margin: 0.6rem;
+  margin-bottom: 0.8rem;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-size: 0.8rem;
+  color: rgba(18, 17, 27, 0.6);
+  line-height: 1.5rem;
+  border-bottom: 1px solid #d6d6d6;
+  padding-left: 0.5rem;
+}
+
+/*# sourceMappingURL=stylesContent.css.map */
