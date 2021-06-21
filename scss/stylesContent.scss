@@ -1,7 +1,7 @@
 body {
     font-family: "Lucida Console", "Courier New", monospace;
 }
-div {
+div, ul {
     box-sizing: border-box;
 }
 .gfillText {
@@ -62,11 +62,12 @@ div {
 .minusHeaderVocab{
     @extend %bbc;
     overflow-x:visible;
+    margin-bottom: 3rem;
 }
 %contentItem {
-    min-height: 100px;   ///////
+    /* min-height: 100px;   ///////
     background-color: white;   ///////
-    margin: 2px;    ///////
+    margin: 2px;    /////// */
     display: flex;
 }
 .header {
@@ -75,7 +76,7 @@ div {
 }
 .header-text {
     background-color: rgb(0, 0, 94);
-    color: rgb(240, 240, 240);
+    color: rgb(248, 248, 248);
     align-self: center;
     padding: 0.3em 1em;
     border-radius: 0.2em 0 0 0.2em;
@@ -146,10 +147,35 @@ div {
     padding: 0.6rem 1.2rem;
     margin-left: 2rem;
     border-radius: 0 0.4rem 0.4rem 0;
+    width: 90%;
 }
 .thinkVocab li {
     padding-left: 0.5rem;
     margin: 0.5rem 0 0.5rem 0;
+}
+%btn{
+    margin-left: 2rem;
+    padding: 0.5rem 1rem;
+    width:  max-content;
+    font-family: "Lucida Console", "Courier New", monospace;
+    color: rgb(253, 253, 253);
+    background-color: rgb(60, 60, 255);
+    border: none;
+    border-radius: 0.25rem;
+    cursor: pointer;
+}
+.submit-button {
+    @extend %btn;
+}
+.reset-button{
+    @extend %btn;
+    margin-left: 1rem;
+    display: none;
+    background-color: rgb(100, 100, 100);
+    color: rgb(255, 255, 255);
+}
+.moreInfo{
+    margin-left: 1rem;
 }
 
 .listening {
@@ -192,11 +218,13 @@ div {
     font-family: Verdana, Tahoma, sans-serif;
     //border: 5px solid rgb(211, 169, 250);
     padding:0.7em;
-    line-height: 1.7em;
+    line-height: 2em;
     border-radius: 0.7em;
     width: 90%;
-    align-self: center;
+    align-self: flex-start;
     background-color: #f1f1f1;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
 }
 .gapFill input {
     border: none;
@@ -242,4 +270,32 @@ div {
     border-bottom: 1px solid rgb(214, 214, 214);
     //font-style: oblique;
     padding-left: 0.5rem;
+}
+%navSkill{
+    padding: 1rem;
+    border-radius: 0.3rem;
+    color:rgb(54, 54, 233);
+    cursor:pointer;
+    text-decoration: none;
+}
+.previousSkill {
+    @extend %navSkill;
+}
+.nextSkill {
+    @extend %navSkill;
+}
+.nav-disabled{
+    @extend %navSkill;
+    color: rgb(54, 54, 54);
+    opacity: 0.4;
+    cursor:default;
+}
+.previousSkill:hover, .nextSkill:hover{
+    background-color: rgb(238, 238, 238);
+}
+.navSkill {
+    display: flex;
+    justify-content: space-between;
+    margin: 3rem -1rem 0 -1rem;
+    font-size: 1.05rem;
 }

@@ -17,3 +17,74 @@ function openDefinitionsPanel(e) {
         def.style.padding = "0%";
     }
 }
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/* let myMap1 = new Map([["gap1", "labour"], ["gap2", "ethnic groups"], ["gap3", "international cuisine"]]);
+let myMap2 = new Map([["gap1", "labour"], ["gap2", "ethnic groups"], ["gap3", "internationalcuisine"]]);
+let newMap = seeIfMatch(myMap1, myMap2);
+document.getElementById("demo").innerHTML = newMap.get("gap3"); */
+
+//document.getElementById("demo").innerHTML = document.getElementById("vg1Gap1").value;
+let myMap1 = new Map([["gap1", "labour"], ["gap2", "ethnic groups"], ["gap3", "international cuisine"]]);
+let myMap2 = new Map([["gap1", "multinational"], ["gap2", "outlets"], ["gap3", "obesity"], ["gap4", "monopoly"], ["gap5", "poverty"], ["gap6", "diet"], ["gap7", "farms"], ["gap8", "supermarkets"], ["gap9", "consumption"]]);
+function displayResult(firstMap, index){
+        return function(){
+            let secondMap = userInputMap(index);
+            let newMap = seeIfMatch(firstMap, secondMap);
+            let correctAnswers = 0;
+            for (let [key, value] of newMap){
+                if(value) {
+                    document.getElementsByClassName("gapFill")[index].querySelector(`input[name=${key}]`).style.outline = "3px solid green";
+                    correctAnswers++;
+                }
+                else   
+                    document.getElementsByClassName("gapFill")[index].querySelector(`input[name=${key}]`).style.outline = "3px solid red";
+            }
+            document.getElementsByClassName("reset-button")[index].style.display = "inline";
+            document.getElementsByClassName("moreInfo")[index].innerHTML = correctAnswers + "/" + newMap.size + " correct answers";
+        }
+}
+function userInputMap(index){
+    let newArray = document.getElementsByClassName("gapFill")[index].getElementsByTagName("input");
+    let newMap = new Map();
+    for(let i of newArray) {
+        newMap.set(i.name, i.value);
+    }
+    return newMap;
+}
+
+
+document.getElementsByClassName("submit-button")[0].onclick = displayResult(myMap1, 0);
+document.getElementsByClassName("reset-button")[0].onclick = resetGapFill(0);
+
+
+document.getElementsByClassName("submit-button")[1].onclick = displayResult(myMap2, 1);
+document.getElementsByClassName("reset-button")[1].onclick = resetGapFill(1);
+
+
+
+
+function resetGapFill(index){
+    return function(){
+        let ar = document.getElementsByClassName("gapFill")[index].querySelectorAll("input");
+        for(let i of ar)
+        {
+            i.style.outline = "none";
+            i.value = "";
+        }
+        document.getElementsByClassName("reset-button")[index].style.display = "none";
+        document.getElementsByClassName("moreInfo")[index].innerHTML = "";
+    }
+}
+
+function seeIfMatch(firstMap, secondMap) {
+    let newMap = new Map();
+    
+    for (let [key, value] of firstMap) {
+        if(secondMap.get(key) != value)
+            newMap.set(key, false);
+        else 
+            newMap.set(key, true);
+      }
+      return newMap;
+}

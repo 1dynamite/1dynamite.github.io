@@ -11,18 +11,18 @@ html, body {
   bottom: 0.4em;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  transition: box-shadow 0.25s, width 0.25s, top 0.25s, bottom 0.25s, left 0.25s;
+  transition: box-shadow 0.3s;
   cursor: pointer;
   left: 0;
   overflow: hidden;
 }
 
 .tile:hover {
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5);
-  width: 246px;
-  top: 0.6em;
-  bottom: 0.6em;
-  left: 5px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  /* width: 250px;
+  top: 0.5em;
+  bottom: 0.5em;
+  left: 3px; */
 }
 
 .carousel {
@@ -60,12 +60,14 @@ html, body {
   right: 0px;
   width: 13%;
 }
+
 .fa-caret-left {
-  position:relative;
+  position: relative;
   right: 0.15rem;
 }
+
 .fa-caret-right {
-  position:relative;
+  position: relative;
   left: 0.15rem;
 }
 
@@ -74,7 +76,7 @@ html, body {
   text-shadow: 1px 1px 8px #cfcdcd;       ////rgb(131, 130, 130)
   cursor: pointer;
 } */
-.circleDiv{
+.circleDiv {
   border-radius: 50%;
   background-color: rgba(0, 0, 255, 0.63);
   height: 3rem;
@@ -82,7 +84,7 @@ html, body {
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0.2rem 0.7rem rgb(131, 130, 130);
+  box-shadow: 0 0.2rem 0.7rem #838282;
   transition: box-shadow 0.3s;
 }
 
@@ -179,9 +181,12 @@ html, body {
   height: 70%;
   width: 100%;
 }
-.carousel-item p, .carousel-item h3{
+
+.carousel-item p, .carousel-item h3 {
   margin-left: 0.3rem;
   margin-right: 0.3rem;
 }
+
+/*# sourceMappingURL=styles.css.map */
 
 /*# sourceMappingURL=styles.css.map */

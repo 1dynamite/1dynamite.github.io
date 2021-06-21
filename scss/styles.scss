@@ -1,65 +1,91 @@
-
 html, body {
   height: 100%;
   margin: 0px;
-  color:rgb(71, 71, 71)
+  color: #474747;
 }
+
 .tile {
-  position: absolute; 
-  width: 320px;
+  position: absolute;
+  width: 256px;
   top: 0.4em;
   bottom: 0.4em;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3) ;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  transition: box-shadow 0.3s, width 0.3s, top 0.3s, bottom 0.3s, left 0.3s;
+  transition: box-shadow 0.3s;
   cursor: pointer;
   left: 0;
   overflow: hidden;
 }
+
 .tile:hover {
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5) ;
-  width: 300px;
-  top: 0.6em;
-  bottom: 0.6em;
-  left: 10px;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5);
+  /* width: 250px;
+  top: 0.5em;
+  bottom: 0.5em;
+  left: 3px; */
 }
 
 .carousel {
-  position: relative;  
-  height: 100%; 
+  position: relative;
+  height: 100%;
   width: 100%;
-  
+  font-family: Verdana, Tahoma, sans-serif;
 }
+
 .carousel-item {
-  height: 70%;
+  height: 100%;
   text-align: center;
-  
+  overflow: hidden;
 }
-%controls {
+
+.controls-right, .controls-left {
   position: absolute;
   z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 50px;
-  width: 150px;
-  color: rgb(0, 0, 0, 0.22);
+  font-size: 37px;
+  color: rgba(255, 255, 255, 0.95);
   height: 100%;
   transition: font-size 0.1s;
-}
-.controls-left {
-  @extend %controls;
-  left: 0px;
-}
-.controls-right {
-  @extend %controls;
-  right: 0px;
-}
-.controls-left:hover, .controls-right:hover {
-  font-size: 70px;
-  text-shadow: 1px 1px 8px  rgb(207, 205, 205);
   cursor: pointer;
 }
+
+.controls-left {
+  left: 0px;
+  width: 10%;
+}
+
+.controls-right {
+  right: 0px;
+  width: 13%;
+}
+.fa-caret-left {
+  position:relative;
+  right: 0.15rem;
+}
+.fa-caret-right {
+  position:relative;
+  left: 0.15rem;
+}
+
+/* .controls-left:hover, .controls-right:hover {
+  font-size: 70px;
+  text-shadow: 1px 1px 8px #cfcdcd;       ////rgb(131, 130, 130)
+  cursor: pointer;
+} */
+.circleDiv{
+  border-radius: 50%;
+  background-color: rgba(0, 0, 255, 0.63);
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0.2rem 0.7rem rgb(131, 130, 130);
+  transition: box-shadow 0.3s;
+}
+
 .zoomed-in {
   height: 100vh;
   width: 100vw;
@@ -68,12 +94,13 @@ html, body {
   align-items: center;
   position: fixed;
   z-index: 1;
-  left:0;
+  left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   overflow-x: hidden;
-  color: rgb(243, 242, 242);
+  color: #f3f2f2;
 }
+
 .cloned-data-items {
   position: absolute;
   max-width: 100%;
@@ -81,11 +108,13 @@ html, body {
   width: max-content;
   display: none;
 }
+
 .temp {
   max-height: 80vh;
   max-width: 100vw;
 }
-%zoomed-in-controls {
+
+.z-control-left, .z-control-right {
   position: absolute;
   top: 35%;
   font-size: 45px;
@@ -95,15 +124,16 @@ html, body {
   text-align: center;
   line-height: 200px;
 }
+
 .z-control-right {
-  @extend %zoomed-in-controls;
   right: 20px;
 }
+
 .z-control-left {
-  @extend %zoomed-in-controls;
   left: 20px;
 }
-.exit-icon{
+
+.exit-icon {
   position: absolute;
   top: 4%;
   right: 3%;
@@ -114,34 +144,44 @@ html, body {
   text-align: center;
   line-height: 100px;
 }
-.exit-icon:hover, %zoomed-in-controls:hover {
+
+.exit-icon:hover, .z-control-right:hover, .z-control-left:hover {
   opacity: 1;
   cursor: pointer;
 }
-.image1{
+
+.image1 {
   /* max-width: 100%;
   max-height: 100%; */
   object-fit: cover;
   object-position: 70% 100%;
-  height: 100%;
-  width: 100%;
-}
-.image2{
-  object-fit: cover;
-  object-position: center;
-  height: 100%;
-  width: 100%;
-}
-.image3{
-  object-fit: cover;
-  object-position: center;
-  height: 100%;
-  width: 100%;
-}
-.image4{
-  object-fit: cover;
-  object-position: 0% 100%;
-  height: 100%;
+  height: 70%;
   width: 100%;
 }
 
+.image2 {
+  object-fit: cover;
+  object-position: center;
+  height: 70%;
+  width: 100%;
+}
+
+.image3 {
+  object-fit: cover;
+  object-position: center;
+  height: 70%;
+  width: 100%;
+}
+
+.image4 {
+  object-fit: cover;
+  object-position: 0% 100%;
+  height: 70%;
+  width: 100%;
+}
+.carousel-item p, .carousel-item h3{
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+}
+
+/*# sourceMappingURL=styles.css.map */
