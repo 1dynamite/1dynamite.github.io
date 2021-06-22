@@ -12,6 +12,50 @@ div, ul {
   margin-top: 2.5rem;
 }
 
+.navbar {
+  display: flex;
+  background-color: #003190;
+  background-image: linear-gradient(#003190, #0059c1);
+}
+
+.div3, .div2, .div1 {
+  flex: 1 0 0;
+  display: flex;
+}
+
+.div1 {
+  justify-content: flex-start;
+}
+
+.div2 {
+  justify-content: center;
+}
+
+.div3 {
+  justify-content: flex-end;
+}
+
+.login, .search, .home, .browse {
+  padding: 1rem 1.5rem 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  color: #fdfdfd;
+  font-size: 1.05rem;
+  cursor: pointer;
+}
+
+.login:hover, .search:hover, .home:hover, .browse:hover {
+  background-color: #003190;
+}
+
+.fa-search {
+  margin-left: 0.5rem;
+}
+
+#search-bar {
+  border-radius: 0.3rem;
+}
+
 .contentLayout {
   font-size: 0.9em;
   margin-bottom: 2rem;
@@ -47,7 +91,7 @@ div, ul {
 
 .selectedItem {
   /* border-left: 0.3rem solid rgb(255, 230, 5); */
-  border-left: 0.3rem solid #4805ff;
+  border-left: 0.3rem solid #4d5ac1;
   padding-left: 1rem;
   background-color: whitesmoke;
 }
@@ -59,7 +103,7 @@ div, ul {
 
 .brow {
   margin-right: 0.5rem;
-  color: #3939bd;
+  color: #4d5ac1;
 }
 
 .minusHeaderVocab, .minusHeader {
@@ -86,7 +130,7 @@ div, ul {
 }
 
 .header-text {
-  background-color: #00005e;
+  background-color: #000e61;
   color: #f8f8f8;
   align-self: center;
   padding: 0.3em 1em;
@@ -176,7 +220,7 @@ div, ul {
   width: max-content;
   font-family: "Lucida Console", "Courier New", monospace;
   color: #fdfdfd;
-  background-color: #3c3cff;
+  background-color: #4285f4;
   border: none;
   border-radius: 0.25rem;
   cursor: pointer;
@@ -295,7 +339,7 @@ div, ul {
 .nav-disabled, .nextSkill, .previousSkill {
   padding: 1rem;
   border-radius: 0.3rem;
-  color: #3636e9;
+  color: #4285f4;
   cursor: pointer;
   text-decoration: none;
 }
