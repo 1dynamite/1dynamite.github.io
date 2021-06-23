@@ -10,12 +10,66 @@ div, ul {
     margin-top: 2.5rem;
 
 }
+.arrow-down {
+    margin-left: 0.5rem;
+}
+.login-panel {
+    position: absolute;
+    display: none;
+    //background-color: #000037;
+    background-color: rgb(255, 255, 255);
+    top:100%;
+    z-index: 2;
+    padding: 1rem;
+    border-radius: 0.3rem;
+    border: 1px solid #89b3f5;
+    box-shadow: 0 0 1rem gray;
+}
+.login-button {
+    color: rgb(253, 253, 253);
+    background-color: #4285f4;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
+.tchrstd {
+    font-size: 0.8rem;
+}
+.uNp{
+    border: none;
+    border: 1px solid #4285f4;
+    margin: 0.3rem 0 1rem 0;
+    border-radius: 0.2rem;
+}
+.list-of-topics {
+    position: absolute;
+    display: none;
+    //background-color: #000037;
+    background-color: white;
+    box-shadow: 0 0 1rem gray;
+    top:100%;
+    z-index: 1;
+    border-radius: 0.3rem;
+    border: 1px solid #89b3f5;
+    //background-image: linear-gradient( #003190 , #000037 1%);
+}
+.topic-item {
+    padding: 0.5rem 1.5rem;
+    //color: rgb(253, 253, 253);
+    color: rgb(61, 61, 61);
+    cursor: pointer;
+}
+.topic-item:hover {
+    background-color: rgb(238, 238, 238);
+    color: #4285f4;
+}
 .navbar {
     display: flex;
-    background-color: #003190;
-    //background-color: #0059c1;
-    //background-image: linear-gradient(to right, #003190 , #1349b4);
-    background-image: linear-gradient( #003190 , #0059c1);
+    //background-color: #003190;
+    background-color: #000e61;
+    background-image: linear-gradient( #000e61 , #032b7c);
+    //background-image: linear-gradient( #003190 , #0059c1);
 }
 %divsec {
     flex: 1 0 0;
@@ -24,6 +78,7 @@ div, ul {
 .div1 {
     @extend %divsec;
     justify-content: flex-start;
+    position: relative;
 }
 .div2 {
     @extend %divsec;
@@ -32,6 +87,7 @@ div, ul {
 .div3 {
     @extend %divsec;
     justify-content: flex-end;
+    position: relative;
 }
 %nav-items{
     padding: 1rem 1.5rem 1rem 1.5rem;
@@ -42,13 +98,15 @@ div, ul {
     cursor: pointer;   
 }
 %nav-items:hover {
-    background-color: #003190;
+    background-color: rgb(238, 238, 238);
+    color:#2871e7;
 }
 .browse {
     @extend %nav-items;
 }
 .home {
     @extend %nav-items;
+    text-decoration: none;
 }
 .search {
     @extend %nav-items;
@@ -77,6 +135,8 @@ div, ul {
 .menu {
     flex: 1 0 0;
     box-shadow: 0.3rem 0 0.5rem rgb(214, 214, 214);
+    //background-color: rgb(250, 250, 250);
+    background-color: white;
 }
 .inPageBrowsing {
     list-style-type: none;
@@ -88,12 +148,16 @@ div, ul {
 .inPageBrowsing li {
     margin: 0.8rem 0 0.8rem 0;
     line-height: 1.8rem;
+    cursor: pointer;
+}
+.inPageBrowsing li:hover {
+    color:#4285f4;
 }
 .selectedItem {
     /* border-left: 0.3rem solid rgb(255, 230, 5); */
     border-left: 0.3rem solid #4d5ac1;
     padding-left: 1rem;
-    background-color: whitesmoke;
+    background-color: rgb(235, 235, 235);
 }
 .inPageBrowsing a{
     text-decoration: none;
@@ -163,6 +227,7 @@ div, ul {
     margin-bottom: 2.5rem;
     color:rgb(35, 30, 80);
     font-weight: normal;
+    background-image: linear-gradient(to bottom right, white, #d2e5ff);
 }
 .vocabulary-items:hover {
     box-shadow: 0 0.5em 1em rgb(161, 161, 161);

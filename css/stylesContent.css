@@ -12,10 +12,68 @@ div, ul {
   margin-top: 2.5rem;
 }
 
+.arrow-down {
+  margin-left: 0.5rem;
+}
+
+.login-panel {
+  position: absolute;
+  display: none;
+  background-color: white;
+  top: 100%;
+  z-index: 2;
+  padding: 1rem;
+  border-radius: 0.3rem;
+  border: 1px solid #89b3f5;
+  box-shadow: 0 0 1rem gray;
+}
+
+.login-button {
+  color: #fdfdfd;
+  background-color: #4285f4;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.tchrstd {
+  font-size: 0.8rem;
+}
+
+.uNp {
+  border: none;
+  border: 1px solid #4285f4;
+  margin: 0.3rem 0 1rem 0;
+  border-radius: 0.2rem;
+}
+
+.list-of-topics {
+  position: absolute;
+  display: none;
+  background-color: white;
+  box-shadow: 0 0 1rem gray;
+  top: 100%;
+  z-index: 1;
+  border-radius: 0.3rem;
+  border: 1px solid #89b3f5;
+}
+
+.topic-item {
+  padding: 0.5rem 1.5rem;
+  color: #3d3d3d;
+  cursor: pointer;
+}
+
+.topic-item:hover {
+  background-color: #eeeeee;
+  color: #4285f4;
+}
+
 .navbar {
   display: flex;
-  background-color: #003190;
-  background-image: linear-gradient(#003190, #0059c1);
+  background-color: #000e61;
+  background-image: linear-gradient(#000e61, #032b7c);
 }
 
 .div3, .div2, .div1 {
@@ -25,6 +83,7 @@ div, ul {
 
 .div1 {
   justify-content: flex-start;
+  position: relative;
 }
 
 .div2 {
@@ -33,6 +92,7 @@ div, ul {
 
 .div3 {
   justify-content: flex-end;
+  position: relative;
 }
 
 .login, .search, .home, .browse {
@@ -45,7 +105,12 @@ div, ul {
 }
 
 .login:hover, .search:hover, .home:hover, .browse:hover {
-  background-color: #003190;
+  background-color: #eeeeee;
+  color: #2871e7;
+}
+
+.home {
+  text-decoration: none;
 }
 
 .fa-search {
@@ -74,6 +139,7 @@ div, ul {
 .menu {
   flex: 1 0 0;
   box-shadow: 0.3rem 0 0.5rem #d6d6d6;
+  background-color: white;
 }
 
 .inPageBrowsing {
@@ -87,13 +153,18 @@ div, ul {
 .inPageBrowsing li {
   margin: 0.8rem 0 0.8rem 0;
   line-height: 1.8rem;
+  cursor: pointer;
+}
+
+.inPageBrowsing li:hover {
+  color: #4285f4;
 }
 
 .selectedItem {
   /* border-left: 0.3rem solid rgb(255, 230, 5); */
   border-left: 0.3rem solid #4d5ac1;
   padding-left: 1rem;
-  background-color: whitesmoke;
+  background-color: #ebebeb;
 }
 
 .inPageBrowsing a {
@@ -166,6 +237,7 @@ div, ul {
   margin-bottom: 2.5rem;
   color: #231e50;
   font-weight: normal;
+  background-image: linear-gradient(to bottom right, white, #d2e5ff);
 }
 
 .vocabulary-items:hover {

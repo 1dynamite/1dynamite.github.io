@@ -16,13 +16,25 @@
     <div class="navbar">
         <div class="div1">
             <div class="browse">
-                Browse
+                Browse <i class="fas fa-angle-down arrow-down"></i>
+            </div>
+            <div class="list-of-topics">
+                <div class="topic-item">Ageing</div>
+                <div class="topic-item">Architecture</div>
+                <div class="topic-item">Art & Design</div>
+                <div class="topic-item">Education</div>
+                <div class="topic-item">Energy</div>
+                <div class="topic-item">Environment</div>
+                <div class="topic-item">Globalization</div>
+                <div class="topic-item">Manufacturing</div>
+                <div class="topic-item">Medicine</div>
+                <div class="topic-item">Risk</div>
             </div>
         </div>
         <div class="div2">
-            <div class="home">
-                Learn English
-            </div>
+            <a href="/index.html" class="home">
+                Home
+            </a>
         </div>
         <div class="div3">
             <div class="search">
@@ -31,6 +43,19 @@
             </div>
             <div class="login">
                 login
+            </div>
+            <div class="login-panel">
+                <form>
+                    <label for="uname">Username:</label><br>
+                    <input  class= "uNp" type="text" id="uname" name="uname"><br>
+                    <label for="pwrd">Password:</label><br>
+                    <input  class= "uNp" type="password" id="pwrd" name="pwrd"><br><br>
+                    <input type="radio" id="std" name="user">
+                    <label class= "tchrstd" for="std">Log in as a student</label><br>
+                    <input type="radio" id="tchr" name="user">
+                    <label class= "tchrstd" for="tchr">Log in as a teacher</label><br><br>
+                    <input class="login-button" type="submit" value="Submit">
+                </form> 
             </div>
         </div>
     </div>
