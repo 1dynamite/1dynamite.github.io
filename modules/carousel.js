@@ -1,6 +1,11 @@
 import {List, createDiv} from './utility.js';
 
 export function carouselModule(margin, translateTime, slides, crslNum) {
+  if(document.getElementsByClassName("zoomed-in")[0])
+    document.getElementsByClassName("zoomed-in")[0].remove();
+  let str = "box-shadow 0.3s, transform " + 0 + "s, opacity " + 0 + "s";
+  document.styleSheets[1].cssRules[1].style.transition = str;
+
   let carouselContainer = document.getElementsByClassName("carousel")[crslNum];
   let carouselItems = document.getElementsByClassName("carousel-item");
   let length = carouselItems.length;
@@ -23,6 +28,8 @@ for(let i of tiles) {
     i.className = "tile";
     carouselContainer.appendChild(i);
 }
+
+/* document.getElementById("demo").innerHTML = tiles.length; */
 /* ---------------------------------------------------------------------------------- */
 
 let temp = document.createElement("div");
@@ -167,11 +174,10 @@ function addHandler() {
     document.getElementsByClassName("controls-right")[0].addEventListener("click", translateOnClick_right);
   }
 
-  let str = document.styleSheets[1].cssRules[1].style.transition;
-  str += ", transform " + translateTime + "s, opacity " + 0.5 + "s";
-window.onload = () => document.styleSheets[1].cssRules[1].style.transition = str;
+  let strB = "box-shadow 0.3s, transform " + translateTime + "s, opacity " + 0.5 + "s";
+  
+setTimeout(() => document.styleSheets[1].cssRules[1].style.transition = strB, 300);
 
 
-//document.getElementById("demo").innerHTML = str;
 }
 

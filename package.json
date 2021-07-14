@@ -22,7 +22,8 @@
     "esm": "^3.2.25",
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
-    "linked-list": "^3.0.1"
+    "linked-list": "^3.0.1",
+    "mongodb": "^3.6.9"
   },
   "devDependencies": {
     "lite-server": "^2.6.1",

@@ -45,17 +45,21 @@
                 login
             </div>
             <div class="login-panel">
-                <form>
+                <form id="myForm" onsubmit="return false">
                     <label for="uname">Username:</label><br>
                     <input  class= "uNp" type="text" id="uname" name="uname"><br>
                     <label for="pwrd">Password:</label><br>
                     <input  class= "uNp" type="password" id="pwrd" name="pwrd"><br><br>
-                    <input type="radio" id="std" name="user">
+                    <input type="radio" id="std" name="user" value="student">
                     <label class= "tchrstd" for="std">Log in as a student</label><br>
-                    <input type="radio" id="tchr" name="user">
+                    <input type="radio" id="tchr" name="user" value="teacher">
                     <label class= "tchrstd" for="tchr">Log in as a teacher</label><br><br>
-                    <input class="login-button" type="submit" value="Submit">
+                    <input id="log-button" class="login-button" type="submit" value="Submit">
+                    <p style="display: none; font-size: 0.8rem; text-align: center;" id="login-message"></p>
                 </form> 
+            </div>
+            <div class="log-out">
+                log out
             </div>
         </div>
     </div>
@@ -70,60 +74,84 @@
             <div class="menu">
                 <div class="sticky">
                     <p class="brow-head">IN THIS LESSON</p>
-                    <ul class="inPageBrowsing">
-                        <li class="selectedItem"><a href="#"><i class="fas fa-chalkboard-teacher brow"></i>Introduction</a></li>
-                        <li><a href="/vocab.html"><i class="fas fa-book brow"></i>Vocabulary</a></li>
-                        <li><a href="/listening.html"><i class="fas fa-headphones brow"></i>Listening</a></li>
-                        <li><a href="/reading.html"><i class="fab fa-readme brow"></i>Reading</a></li>
-                
-                    </ul>
+                    <div id="dynamic-content-1">
+                        <ul class="inPageBrowsing">
+                            <li class="selectedItem"><div><i class="fas fa-chalkboard-teacher brow"></i>Introduction</div></li>
+                            <li><div><i class="fas fa-headphones brow"></i>Listening</div></li>
+                            <li><div><i class="fas fa-book brow"></i>Vocabulary</div></li>
+                            <li><div><i class="fab fa-readme brow"></i>Reading</div></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="minusHeader">
-                <div class="carouselContainer">
-                    <div itemsPerSlide="3" m-rl="24" cycle="0.7"  class="carousel">
-                        <div class="carousel-item"><img src="/img/ethnic groups.jpg" alt="ethnic groups" class="image1">
-                            <h3>New York</h3>
-                            <p>Home to many ethnic groups</p>
+                <div id="dynamic-content-2">
+                    <div class="carouselContainer">
+                        <div itemsPerSlide="3" m-rl="24" cycle="0.7"  class="carousel">
+                            <div class="carousel-item"><img src="/img/ethnic groups.jpg" alt="ethnic groups" class="image1">
+                                <h3>New York</h3>
+                                <p>Home to many ethnic groups</p>
+                            </div>
+                            <div class="carousel-item"><img src="/img/international cuisine.jpg" alt="cuisine" class="image2">
+                                <h3>Sushi</h3>
+                                <p>A well-known dish of international cuisine</p></div>
+                            <div class="carousel-item"><img src="/img/Apple store in Milan.jpg" alt="Apple store in Milan" class="image3">
+                                <h3>Apple store in Milan</h3>
+                                <p>A multinational company Apple has many stores overseas</p></div>
+                            <div class="carousel-item"><img src="/img/labour.jpg" alt="labour" class="image4">
+                                <h3>Factory women</h3>
+                                <p>Labor in China</p></div>
+                            
+                            <div class="controls-right">
+                                <div id="rightControl" class="circleDiv"><i class="fa fa-caret-right caret"></i></div>
+                            </div>
+                            <div class="controls-left">
+                                <div id="leftControl" class="circleDiv"><i class="fa fa-caret-left caret"></i></div>
+                            </div>
+                    
                         </div>
-                        <div class="carousel-item"><img src="/img/international cuisine.jpg" alt="cuisine" class="image2">
-                            <h3>Sushi</h3>
-                            <p>A well-known dish of international cuisine</p></div>
-                        <div class="carousel-item"><img src="/img/Apple store in Milan.jpg" alt="Apple store in Milan" class="image3">
-                            <h3>Apple store in Milan</h3>
-                            <p>A multinational company Apple has many stores overseas</p></div>
-                        <div class="carousel-item"><img src="/img/labour.jpg" alt="labour" class="image4">
-                            <h3>Factory women</h3>
-                            <p>Labor in China</p></div>
-                        
-                        <div class="controls-right">
-                            <div id="rightControl" class="circleDiv"><i class="fa fa-caret-right caret"></i></div>
-                        </div>
-                        <div class="controls-left">
-                            <div id="leftControl" class="circleDiv"><i class="fa fa-caret-left caret"></i></div>
-                        </div>
-            
                     </div>
+                    
+                    <i class="fa fa-tasks"></i><p class="taskStatements">Discuss the questions below:</p>
+                    <ul class="thinkVocab">
+                        <li>Look at your clothes, the items on your desk, in your bag and pockets. Where were they made? How many were made in your country?</li>
+                        <li>Does it matter that we now import so many goods from other countries? Why? / Why not?</li>
+                        <li>What effects has globalization had on your country?</li>
+                    </ul>
+                    <div style="display: flex;"><i style="align-self: flex-start; margin-top: 1.34rem;" class="fa fa-tasks"></i><p style="width: 80%; line-height: 1.5rem;" class="taskStatements">You are going to watch a video about food in New York. Before you watch, look at the photos and ask and answer the questions with a partner.</p>
+                    </div>
+                    <ul class="thinkVocab">
+                        <li>What do you know about New York?</li>
+                        <li>What types of food is the USA famous for?</li>
+                        <li>There are many types of restaurant in New York. Why do you think this is?</li>
+                    </ul>
+                    <div class="navSkill">
+                        <div class="nav-disabled"><i class="fas fa-angle-left"></i> Previous</div>
+                        <div class="nextSkill">Next <i class="fas fa-angle-right"></i></div>
+                    </div>
+                    
                 </div>
-                <i class="fa fa-tasks"></i><p class="taskStatements">Discuss the questions below:</p>
-                <ul class="thinkVocab">
-                    <li>Look at your clothes, the items on your desk, in your bag and pockets. Where were they made? How many were made in your country?</li>
-                    <li>Does it matter that we now import so many goods from other countries? Why? / Why not?</li>
-                    <li>What effects has globalization had on your country?</li>
-                </ul>
-                <div class="navSkill">
-                    <a class="nav-disabled"><i class="fas fa-angle-left"></i> Previous</a>
-                    <a href="/vocab.html" class="nextSkill">Next <i class="fas fa-angle-right"></i></a>
+                <div class="comment-header"><i class="fas fa-comment"></i><span class="comment-header-text">Comments</span></div>
+                <div class="comment-section">
+                    
                 </div>
+                <!-- <div class="comment">
+                    <span class="username">Shoxrux</span>
+                    <span class="posted-when">a day ago</span>
+                    <p class="comment-text">This is the first comment! Lorem ipsum dolor sit amet.</p>
+                </div> -->
             </div>
         </div>
-        
-        
     </div>
 
 
    <p id="demo"></p>
 
-    <script type="module" src="main.js"></script>
+    <script type="module" src="all.js"></script>
+
+    <!-- <div class="navSkill">
+                        <a class="nav-disabled"><i class="fas fa-angle-left"></i> Previous</a>
+                        <a href="/vocab.html" class="nextSkill">Next <i class="fas fa-angle-right"></i></a>
+                    </div> -->
     
 </body>
